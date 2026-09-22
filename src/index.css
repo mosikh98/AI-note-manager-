@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.ink.dim') transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: theme('colors.ink.dim'); border-radius: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'Vazirmatn', system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Rendered markdown preview */
+.note-prose {
+  line-height: 1.9;
+  color: theme('colors.ink.DEFAULT');
+}
+.dark .note-prose { color: theme('colors.ink.light'); }
+.note-prose h1, .note-prose h2, .note-prose h3 {
+  font-weight: 800;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+.note-prose h1 { font-size: 1.6em; }
+.note-prose h2 { font-size: 1.3em; }
+.note-prose h3 { font-size: 1.1em; }
+.note-prose p { margin: 0.7em 0; }
+.note-prose ul, .note-prose ol { margin: 0.7em 0; padding-inline-start: 1.4em; }
+.note-prose li { margin: 0.3em 0; }
+.note-prose blockquote {
+  border-inline-start: 3px solid theme('colors.pine.DEFAULT');
+  padding-inline-start: 1em;
+  color: theme('colors.ink.soft');
+  margin: 1em 0;
+}
+.note-prose code {
+  background: theme('colors.ink.light');
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.dark .note-prose code { background: theme('colors.paper.darksoft'); }
+.note-prose pre {
+  background: theme('colors.ink.DEFAULT');
+  color: theme('colors.paper.DEFAULT');
+  padding: 1em;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+.note-prose pre code { background: transparent; padding: 0; }
+.note-prose hr { border: none; border-top: 1px solid theme('colors.ink.dim'); margin: 1.5em 0; }
